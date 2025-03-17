@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 6</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
+      </style>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .poppins-thin {
+        font-family: "Poppins", sans-serif;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body class="poppins-thin">
+    <header>
+      <!-- header nav -->
+      <section id="nav" class="fixed top-0 w-full shadow-md z-50">
+        <div
+          class="navbar bg-base-100 shadow-sm px-11 bg-gradient-to-r from-white via-gray-100 to-white"
+        >
+          <div class="flex-1">
+            <a class="flex items-center text-xl"
+              >ENGLISH
+              <span> <img src="./assets/logo.png" alt="" /> </span>জানালা</a
+            >
+          </div>
+          <div class="flex justify-center items-center gap-10">
+            <a href="#faq-section"
+              ><button
+                class="btn btn-ghost text-blue-600 border-blue-400 hover:bg-blue-500 hover:text-white"
+              >
+                <i class="fa-solid fa-circle-question"></i>FAQ
+              </button></a
+            >
+            <a href="#learn">
+              <button
+                class="btn btn-ghost text-blue-600 border-blue-400 hover:bg-blue-500 hover:text-white"
+              >
+                <i class="fa-solid fa-book-open"></i>Learn
+              </button>
+            </a>
+            <button id="logout"
+              class="btn btn-ghost text-blue-600 border-blue-400 hover:bg-blue-500 hover:text-white"
+            >
+              <i class="fa-solid fa-right-from-bracket"></i>Logout
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- header hero -->
+      <section id="head-hero">
+        <div class="flex justify-center items-center gap-6">
+          <div class="flex flex-col gap-3">
+            <h1 class="font-bold text-3xl">
+              <span class="text-blue-400">English</span> is Easy!!
+            </h1>
+            <p>
+              আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা
+              <br />
+              আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে
+              <br />
+              যাবে অন্য একটি Level এ
+            </p>
+            <input
+              id="textname"
+              type="text"
+              placeholder="Enter your name"
+              class="input input-neutral"
+            />
+            <input
+              id="password"
+              type="password"
+              placeholder="password 123456"
+              class="input input-neutral"
+            />
+            <button
+              onclick="button()"
+              id="getstart"
+              class="btn w-32 btn btn-primary"
+            >
+              Get Started
+            </button>
+          </div>
+          <div>
+            <img
+              class="w-[550px] h-[500px]"
+              src="./assets/hero-student.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
+    </header>
+
+    
+    <main id="main" class="mt-20">
+      <!-- Js ADD Start -->
+      <section id="learn">
+        <h1 class="text-center text-3xl font-bold my-5">
+          <span class="text-[#00BCFF]">Let's</span> Learn Vocabularies
+        </h1>
+        <div
+          id="learnVocab"
+          class="flex justify-center items-center gap-3"
+        ></div>
+        <!-- loading -->
+        <section id="loader" class="text-center">
+          <span class="loading loading-dots loading-xl hidden"></span>
+        </section>
+        <!-- কোনো সেকশন সিলেক্ট হয় নি -->
+        <div id="null" class="mb-24"></div>
+        <!-- grid section -->
+        <div
+          id="addvocab-lesson1"
+          class="grid grid-cols-3 justify-center items-center m-11 rounded-lg bg-base-200"
+        ></div>
+      </section>
+      <!-- FAQ Section -->
+      <section id="faq-section" class="px-11 flex flex-col gap-3 p-5">
+        <h1 class="text-center text-3xl font-bold my-5">
+          <span class="text-[#00BCFF]">Frequently</span> Asked Questions
+        </h1>
+        <div class="collapse collapse-arrow bg-base-200 border border-base-300">
+          <input type="radio" name="my-accordion-2" checked="checked" />
+          <div class="collapse-title font-semibold">
+            How can I start learning English on this website?          </div>
+          <div class="collapse-content text-sm">
+            Practice conversations with me daily, ask for vocabulary, grammar, and pronunciation help.
+          </div>
+        </div>
+        <div class="collapse collapse-arrow bg-base-200 border border-base-300">
+          <input type="radio" name="my-accordion-2" />
+          <div class="collapse-title font-semibold">
+            Is this website free to use?
+          </div>
+          <div class="collapse-content text-sm">
+            Yes. It's totally free of cost.
+          </div>
+        </div>
+        <div class="collapse collapse-arrow bg-base-200 border border-base-300">
+          <input type="radio" name="my-accordion-2" />
+          <div class="collapse-title font-semibold">
+            Do I need to create an account?
+          </div>
+          <div class="collapse-content text-sm">
+            No.You can use without account.
+          </div>
+        </div>
+        <div class="collapse collapse-arrow bg-base-200 border border-base-300">
+          <input type="radio" name="my-accordion-2" />
+          <div class="collapse-title font-semibold">
+            How can I build my English vocabulary?          </div>
+          <div class="collapse-content text-sm">
+            Read daily, note new words, use flashcards, and practice with me.
+          </div>
+        </div>
+        <div class="collapse collapse-arrow bg-base-200 border border-base-300">
+          <input type="radio" name="my-accordion-2" />
+          <div class="collapse-title font-semibold">
+            Do you offer certificates for completed courses?          </div>
+          <div class="collapse-content text-sm">
+            No. It's only practicing purpose.
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer
+      class="flex justify-between items-center px-11 border-t-2 border-[#FFEBEB] bg-[#FFEBEB] p-11 mt-20"
+    >
+      <div>
+        <h1 class="flex justify-start items-center">
+          ENGLISH <span><img src="./assets/logo.png" alt="" /> </span>জানালা
+        </h1>
+        <p>ইংরেজি শিখুন সহজে</p>
+        <p class="text-sm text-gray-600">
+          Providing ED-Tech Applications since 2025
+        </p>
+      </div>
+      <div>
+        <h1>Follow US</h1>
+        <div class="flex justify-center items-center gap-2 mt-4">
+          <a target="_blank" href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+          <a target="_blank" href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a>
+          <a target="_blank" href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+    </footer>
+    <!-- Open the modal using ID.showModal() method -->
+<!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
+<dialog id="modal_obj" class="modal">
+  <div class="modal-box">
+    <div id="details_modal"></div>
+    
+  </div>
+</dialog>
+    <script src="./script/script.js"></script>
+  </body>
+</html>

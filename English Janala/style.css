@@ -1,0 +1,14 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.hind-siliguri-regular {
+  font-family: "Hind Siliguri", sans-serif;
+  
+  font-style: normal;
+}
+
+.active {
+  background-color: #2563eb;
+  color: white;
+}
